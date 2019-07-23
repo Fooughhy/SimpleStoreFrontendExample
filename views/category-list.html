@@ -1,0 +1,39 @@
+<div class="album py-5 bg-light">
+  <div class="container text-small">
+    <div class="row" ng-repeat="cat in categories">
+      <!-- <div class="col-md-3 col-md-offset-1" ng-repeat="cat in categories"> -->
+        <div class="panel panel-default">
+          <div class="panel-heading container-fluid">
+            <div class="row">
+              <div class="col-md-4">
+                <span class="text-left">{{cat.name}}</span>
+              </div>
+              <div class="col-md-4">
+                <small class="text-right text-muted pull-right">ID: {{cat.id}}</small>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="container text-small">
+              <div class="row">
+                <div class="col-md-2" ng-repeat="prod in cat.children">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <span class="text-left">{{prod.name}}</span><br>
+                      <small class="text-right text-muted">ID: {{prod.id}}</small>
+                    </div>
+                    <div class="panel-body">
+                      <p>Pris: {{prod.AGA.PRI}}:-</p>
+                      <p>Lagerstatus: {{inStock(prod)}}</p>
+                      <p>Volym: {{prod.AGA.VOL}}st</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

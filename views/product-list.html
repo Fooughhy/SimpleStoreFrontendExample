@@ -1,0 +1,39 @@
+<div class="container">
+  <table id="search-table" class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th id="table-prod-id" class="col-md-1 text-center">ID</th>
+        <th id="table-prod-name" class="col-md-3 text-center">Produktnamn</th>
+        <th id="table-prod-price" class="col-md-1 text-center">Pris</th>
+        <th id="table-prod-volume" class="col-md-1 text-center">
+          <button type="button" class="btn btn-default" aria-label="Sort ID" ng-click="sortBy('Volume')">
+            <span>Volym</span>
+            <span class="glyphicon glyphicon glyphicon-sort" aria-hidden="true"></span>
+          </button>
+        </th>
+        <th id="table-prod-in-stock" class="col-md-1 text-center">
+          <button type="button" class="btn btn-default" aria-label="Sort ID" ng-click="sortBy('InStock')">
+            <span>Lagerstatus (Lagersaldo)</span>
+            <span class="glyphicon glyphicon glyphicon-sort" aria-hidden="true"></span>
+          </button>
+        </th>
+        <th id="table-prod-in-stock" class="col-md-1 text-center">
+          <button type="button" class="btn btn-default" aria-label="Sort ID" ng-click="sortBy('Categories')">
+            <span>Kategorier</span>
+            <span class="glyphicon glyphicon glyphicon-sort text-right" aria-hidden="true"></span>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="prod in productData | searchFilter:this | orderBy:sortColumn:sortDir">
+        <td>{{getId(prod)}}</td>
+        <td>{{getName(prod)}}</td>
+        <td>{{getPrice(prod)}}</td>
+        <td>{{getVolume(prod)}}</td>
+        <td>{{inStock(prod)}}</td>
+        <td><span ng-repeat="cat in prod.categories">{{cat.name}}<br></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

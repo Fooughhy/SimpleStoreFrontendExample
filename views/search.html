@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-md-4 col-md-offset-4 text-center">
+      <h3 class="">Sök hos Gung</h3>
+    </div>
+  </div>
+  <div class="row" style="padding-bottom: 3%;">
+    <div class="col col-md-4 col-md-offset-4">
+      <input class="form-control form-control-md" type="search" placeholder="Sök efter namn eller id" aria-label="Search" id="globalSearchInput" ng-model="currentSearch">
+    </div>
+    <div class="col col-md-2">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
+        Filtrera resultatet
+      </button>
+    </div>
+  </div>
+  <div class="row collapse" id="collapseFilters">
+    <div class="col col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="container">
+            <div class="row">
+              <div class="col col-md-4">
+                <label for="filter-category">Filtrera kategorier</label>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Kategori" id="filter-category" name="category-filter-value" value="" ng-model="categoryFilterValue">
+                </div>
+                <div class="form-group">
+                  <label class="form-check-label" for="in-stock-checkbox">Endast varor som finns i lager</label>
+                  <input type="checkbox" class="form-check" id="in-stock-checkbox" value="" ng-model="inStockFilterValue">
+                </div>
+              </div>
+              <div class="col col-md-2">
+                <label for="filter-id">Filtrera produkt-id</label>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Id" id="filter-id" name="id-filter-value" value="" ng-model="idFilterValue">
+                </div>
+              </div>
+              <div class="col col-md-3">
+                <label for="filter-volume">Filtrera volym</label>
+                <div class="form-group" id="filter-volume">
+                  <input type="text" class="form-control" placeholder="Från" name="volume-from" value="" ng-model="volumeFromFilterValue">
+                  <input type="text" class="form-control" placeholder="Till" name="volume-to" value="" ng-model="volumeToFilterValue">
+                </div>
+              </div>
+              <div class="col col-md-3">
+                <label for="filter-price">Filtrera pris</label>
+                <div class="form-group" id="filter-price">
+                  <input type="text" class="form-control" placeholder="Från" name="price-from" value="" ng-model="priceFromFilterValue">
+                  <input type="text" class="form-control" placeholder="Till" name="price-to" value="" ng-model="priceToFilterValue">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:2%;" ng-include="'views/product-list.html'"></div>

@@ -1,0 +1,12 @@
+.text-small {
+  font-size: 40%;
+}
+
+#globalSearchInput input[type=text]{
+  width: 20% !important;
+}
+
+.block {
+  width: auto;
+  display: inline-block;
+}
