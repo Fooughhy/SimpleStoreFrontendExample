@@ -6,7 +6,7 @@
   "main": "index.js",
   "dependencies": {
     "@popperjs/core": "^2.4.0",
-    "angular": "^1.7.9",
+    "angular": "^1.8.0",
     "angular-route": "^1.7.9",
     "bootstrap": "^3.4.1",
     "bootstrap-table": "^1.16.0",
